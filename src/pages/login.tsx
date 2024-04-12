@@ -1,0 +1,56 @@
+import { ComboboxDemo } from "@/components/choose";
+import { DatePickerDemo } from "@/components/datePicker";
+import { InputOTPDemo } from "@/components/otp-input";
+import { Button } from "@/components/ui/button";
+import {
+  Card,
+  CardContent,
+  CardDescription,
+  CardFooter,
+  CardHeader,
+  CardTitle,
+} from "@/components/ui/card";
+import { Input } from "@/components/ui/input";
+import { Label } from "@radix-ui/react-label";
+
+function Login() {
+  return (
+    <>
+    <Card className="w-[420px]">
+      <CardHeader>
+        <CardTitle>Create account</CardTitle>
+        <CardDescription>
+          Enter your email here to create an account
+        </CardDescription>
+      </CardHeader>
+      <CardContent>
+        <div className="grid gap-2 items-start space-y-2">
+          <div className="flex flex-col items-start space-y-2">
+            <Label htmlFor="email">Email</Label>
+            <Input id="email" type="email" placeholder="m@example.com" />
+          </div>
+        </div>
+        <div className="grid gap-2 items-start space-y-2 mt-4">
+          <div className="flex flex-col items-start space-y-2">
+            <Label htmlFor="password" className="">
+              Password
+            </Label>
+            <Input required id="password" type="password" />
+          </div>
+        </div>
+        <div className="grid gap-2 items-start space-y-2 mt-4">
+          <div className="flex flex-col items-start space-y-2">
+            <Label htmlFor="text">OTP code</Label>
+            <InputOTPDemo />
+          </div>
+        </div> 
+      </CardContent>
+      <CardFooter>
+        <Button type="submit" className="w-full">Create account</Button>
+      </CardFooter>
+    </Card>
+    </>
+  );
+}
+
+export default Login;
